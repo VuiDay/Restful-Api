@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet">
+</head>
+<body>
+    <div class="topnav" id="myTopnav">
+        <a href="/">Home</a>
+        <a href="/create">News</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+    </div>
+    <div class="form">
+        <form action="/update-user" method="POST">
+            <fieldset>
+                <legend>Form edit user: </legend>
+                <div class="input-group">
+                    <label for="">ID: </label>
+                    <input value="<%= userEdit.id %>" type="text" name="ID">
+                </div>
+                <div class="input-group">
+                    <label for="">Email: </label>
+                    <input value="<%= userEdit.email %>" type="text" name="Email">
+                </div>
+                <div class="input-group">
+                    <label for="">Name: </label>
+                    <input value="<%= userEdit.name %>" type="text" name="Name">
+                </div>
+                <div class="input-group">
+                    <label for="">City: </label>
+                    <input value="<%= userEdit.city %>" type="text" name="City">
+                </div>      
+                <input type="submit" value="Add">
+            </fieldset>
+        </form>
+    </div>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
+</body>
+</html>

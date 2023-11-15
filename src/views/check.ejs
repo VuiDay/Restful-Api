@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet">
+</head>
+<body>
+    <div class="topnav" id="myTopnav">
+        <a href="/" class="active">Home</a>
+        <a href="/create">News</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+    </div>
+    <h1 style="text-align: center;">List User</h1>
+    <table class="w3-table">
+        <tr>
+          <th>ID</th>
+          <th>Email</th>
+          <th>Name</th>
+          <th>City</th>
+          <th>Actions</th>
+        </tr>
+        <% listUser.forEach((data)=> { %>
+          <tr>
+            <td><%= data.id %></td>
+            <td><%= data.email %></td>
+            <td><%= data.name %></td>
+            <td><%= data.city %></td>
+            <td>
+              <a href="/update/<%= data.id%>"><button>Edit</button></a>
+              <button>Delete</button>
+            </td>
+          </tr>
+        <% })%>
+      </table>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
+</body>
+</html>
